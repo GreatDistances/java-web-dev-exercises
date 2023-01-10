@@ -30,7 +30,7 @@ public class Main {
                 }
             }
         }
-        
+
         for (char key : charsHashMap.keySet()) {
             System.out.println(key + ": " + charsHashMap.get(key));
         }
