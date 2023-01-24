@@ -6,6 +6,8 @@ public class Main {
 
     public static void main(String[] args) {
 
+        String alphaValidation = "abcdefghijklmnopqrstuvwxyz";
+
         HashMap<Character, Integer> charsHashMap = new HashMap<>();
 
         Scanner scanner = new Scanner(System.in);
@@ -15,7 +17,7 @@ public class Main {
         char[] charsInString = myString.toCharArray();
 
         for (int i = 0; i < charsInString.length; i++) {
-            charsHashMap.put(charsInString[i], 0);
+                charsHashMap.put(charsInString[i], 0);
         }
         //System.out.println(charsHashMap);
         //System.out.println(charsHashMap.size());
