@@ -11,8 +11,7 @@ public class Main {
         // initialize a menu ArrayList
         ArrayList<Menu> menu1 = new ArrayList<>();
 
-        /*
-        // Menu items manually entered prior to Scanner input method
+        /* // Menu items manually entered prior to Scanner input method
         MenuItem phoTai = new MenuItem("main", "Pho Tai", "delicious soup", 11.99);
         phoTai.printMenuItem();
         menu1.add(phoTai);
@@ -35,17 +34,17 @@ public class Main {
             if (input.equals("1") || input.contains("add") || input.contains("ADD")) {
                 Menu.addToMenu(menu1, MenuItem.inputMenuItem());
                 Menu.printFullMenu(menu1);
-            } else if (input.equals("2") || input.contains("remove") || input.contains("REMOVE")) { // MW - move below code into a removeFromMenu() method
+            } else if (input.equals("2") || input.contains("remove") || input.contains("REMOVE")) {
                 if (menu1.size() == 0) {
                     Menu.printFullMenu(menu1);
                 } else {
                     Menu.printFullMenu(menu1);
-                    System.out.println("Please select an item to remove by index number, starting from 1: "); // only removes by index, needs rethinking
+                    System.out.println("Please select an item to remove by index number, starting from 1: "); // only removes by index, may need rethinking
                     int removeIndex = (s.nextInt() - 1); // only removes by index, may need rethinking
                     Menu.removeFromMenu(menu1, removeIndex); // only removes by index, may need rethinking
                 }
             } else if (input.contains("3") || input.contains("print") || input.contains("PRINT")) {
-                Menu.printFullMenu(menu1); // MW - prints objects at present, would prefer to print menu items like in MenuItems
+                Menu.printFullMenu(menu1);
             } else if (input.equals("X") || input.equals("x") || input.contains("exit") || input.contains("EXIT")) {
                 flag = false;
                 System.out.println("*** EXITING MENU SYSTEM ***");

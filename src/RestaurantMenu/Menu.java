@@ -38,6 +38,12 @@ public class Menu {
 
     // Add item to Menu
     public static ArrayList addToMenu(ArrayList menu, MenuItem menuItem) { // MW should this be static?
+
+        if (menu.toString().contains(menuItem.toString())) {
+            System.out.println("** DUPLICATE ITEM ENTERED, REMOVING LAST ITEM ENTERED **");
+            menu.remove(menuItem);
+            return menu;
+        }
         menu.add(menuItem);
         if (menuItem.getDateAdded().isAfter(menuDate)) {
             menuDate = menuItem.getDateAdded();
@@ -72,7 +78,7 @@ public class Menu {
         }
     }
 
-    // toString method, not used presently (1/19/23)
+    // toString method
     @Override
     public String toString() {
         return "Menu{" +

@@ -2,6 +2,7 @@ package RestaurantMenu;
 
 import java.awt.*;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class MenuItem extends Menu {
@@ -104,9 +105,11 @@ public class MenuItem extends Menu {
         String newToday = s.next();
         if (newToday.equals("n") || newToday.equals("N")) {
             System.out.println("Enter the date this menu item was added, in format YYYY-MM-DD: ");
+            String strDate = s.next();
+            DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+            LocalDate newDateAdded = LocalDate.parse(strDate, dtf);
             // MW - need validation of date format entry here, program will crash with bad input presently
             // MW - need validation that entered date is not in future
-            LocalDate newDateAdded = LocalDate.parse(s.next());
             MenuItem newMenuItem = new MenuItem(newCategory, newItemName, newItemDescription, newItemPrice, newDateAdded);
             newMenuItem.printMenuItem();
             System.out.println("*** Thank you, the above item has been added to the menu. *** \n");
